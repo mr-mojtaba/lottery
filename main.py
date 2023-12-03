@@ -32,14 +32,14 @@ def select_winners():
             top_window.title("لیست برندگان")
             top_window.geometry("400x600")
             top_window.resizable(True, True)
-            top_window.configure(background="green")
+            top_window.configure(background="#8BC34A")
             win_label = ttk.Label(top_window, text="برندگان قرعه کشی", font=("Arial", 14),
-                                  background="blue", foreground="white")
+                                  background="#004D40", foreground="white")
             win_label.pack(pady=15)
-            winners_list = [f"{i + 1}-{j}" for i, j in enumerate(winners_list)]
+            winners_list = [f"{i + 1}- {j}" for i, j in enumerate(winners_list)]
             winners = "\n".join(winners_list)
             show_winners = ttk.Label(top_window, text=winners, font=("Arial", 14),
-                                     background="blue", foreground="white")
+                                     background="#8BC34A", foreground="#004D40")
             show_winners.pack(pady=15)
             top_window.mainloop()
     except FileNotFoundError:
@@ -52,20 +52,20 @@ def select_winners():
 window = tk.Tk()
 
 window.title("برنامه قرعه کشی")
-window.geometry("500x500")
+window.geometry("500x270")
 
 # For changing the window sizes
 window.resizable(True, True)
 
-window.configure(background="black")
+window.configure(background="#8BC34A")
 
 # Creating a title
-file_label = ttk.Label(window, text="فایل اسامی شرکت کننده ها را انتخاب کنید",
-                       font=("Arial", 14), background="yellow", foreground="red")
-file_label.pack(pady=15)
+file_label = ttk.Label(window, text="فایل اسامی شرکت کنندگان را انتخاب کنید",
+                       font=("Arial", 14), background="#8BC34A", foreground="#004D40")
+file_label.pack(pady=20)
 
 style = ttk.Style()
-style.configure("TFrame", background="blue")
+style.configure("TFrame", background="#006064")
 
 # Creating a frame
 file_frame = ttk.Frame(window, style="TFrame")
@@ -77,11 +77,11 @@ file_entry.grid(row=0, column=0, padx=5, pady=5)
 
 # Creating a button for select the file input
 file_button = ttk.Button(file_frame, text="انتخاب فایل", command=select_file)
-file_button.grid(row=0, column=1, padx=5, pady=5)
+file_button.grid(row=0, column=1, padx=2, pady=2)
 
 # Creating a label for winners
-winners_label = ttk.Label(window, text="تعداد شرکت کننده ها را انتخاب کنید",
-                          font=("Arial", 14), background="yellow", foreground="red")
+winners_label = ttk.Label(window, text="تعداد شرکت کننده ها را وارد کنید",
+                          font=("Arial", 14), background="#8BC34A", foreground="#004D40")
 winners_label.pack(pady=15)
 
 # Creating an input frame for winners
